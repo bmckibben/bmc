@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  justify-content: space-between;
+  margin-top: var(--space-m);
+  margin-bottom: var(--space-l);
+  color: var(--color-white);
+  background-color: var(--color-black);
+  width: 100%;
+  padding: var(--space-xs);
+
+  @include media(tabletAndUp) {
+    margin-bottom: var(--space-xl);
+  }
+}
