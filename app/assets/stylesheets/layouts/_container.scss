@@ -4,7 +4,7 @@
   padding-left: var(--space-xs);
   margin-left: auto;
   margin-right: auto;
-  background: linear-gradient(to bottom, black 0%, #000099 100%) no-repeat center center fixed;
+  //background: linear-gradient(to bottom, black 0%, #000099 100%) no-repeat center center fixed;
   min-height: 100vh;
   @include media(tabletAndUp) {
     padding-right: var(--space-m);
