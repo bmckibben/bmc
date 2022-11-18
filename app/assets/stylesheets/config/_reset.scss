@@ -18,11 +18,13 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100%;
-
-  background: linear-gradient(to bottom, black 0%, #000099 100%) no-repeat center center fixed;
   color: var(--color-text-body);
   line-height: var(--line-height-body);
   font-family: var(--font-family-sans);
+}
+
+body.gradiant-main {
+  background: linear-gradient(to bottom, black 0%, #000099 100%) no-repeat center center fixed;
 }
 
 img,
@@ -30,6 +32,7 @@ picture,
 svg {
   display: block;
   max-width: 100%;
+  vertical-align: middle;
 }
 
 input,
@@ -75,4 +78,8 @@ a {
   &:active {
     color: var(--color-primary-rotate);
   }
+}
+
+.flex-column {
+    flex-direction: column !important;
 }

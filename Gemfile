@@ -31,6 +31,12 @@ gem "cssbundling-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
+
+
+
 # prefer HAML markup to ERB
 gem 'haml-rails'
 
@@ -49,6 +55,8 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# Markup and design related libraries
+gem 'bootstrap-sass'
 # Use Sass to process CSS
 gem "sassc-rails"
 
