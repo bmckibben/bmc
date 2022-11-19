@@ -76,7 +76,6 @@ body.gradiant-main {
 img,
 picture,
 svg {
-  display: block;
   max-width: 100%;
   vertical-align: middle;
 }
@@ -353,6 +352,7 @@ a:hover, a:focus, a:active {
   #readout svg {
     height: 10px;
     width: 10px;
+    display: inline;
   }
 }
 .modal {
