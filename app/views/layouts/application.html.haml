@@ -10,6 +10,8 @@
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
   %body.gradiant-main
     = render "layouts/navbar"
+    .flash{id: "flash"}
+      = render "layouts/flash"
     = yield
   %footer
     This application is based on the tutorial for Hotwire/Turbo at #{link_to "https://www.hotrails.dev/turbo-rails"}
