@@ -10,15 +10,16 @@
   gap: var(--space-s);
 
   max-width: 100%;
-  width: max-content;
+  width: 60%;
   padding: 0 var(--space-m);
 
   &__message {
     font-size: var(--font-size-s);
-    color: var(--color-white);
+    color: var(--color-black);
     padding: var(--space-xs) var(--space-m);
-    background-color: var(--color-dark);
+    background-color: var(--color-alert);
     animation: appear-then-fade 4s both;
-    border-radius: 999px;
+    border-radius: 10px;
+    width: 100%;
   }
 }

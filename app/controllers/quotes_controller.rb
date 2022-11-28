@@ -4,7 +4,7 @@ class QuotesController < ApplicationController
 
   def index
     @quotes = current_company.quotes.ordered
-    flash[:notice] = "We are loaded."
+    flash.now[:notice] = "We are loaded."
   end
 
   def show
@@ -32,7 +32,11 @@ class QuotesController < ApplicationController
 
   def update
     if @quote.update(quote_params)
-      redirect_to quotes_path, notice: "Quote was successfully updated."
+      #redirect_to quotes_path, notice: "Quote was successfully updated."
+      respond_to do |format|
+        format.html { redirect_to quotes_path, notice: "Quote was successfully updated." }
+        format.turbo_stream { flash.now[:notice] = "Quote was successfully updated." }
+      end      
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,7 +46,7 @@ class QuotesController < ApplicationController
     @quote.destroy
     respond_to do |format|
       format.html { redirect_to quotes_path, notice: "Quote was successfully destroyed." }
-      format.turbo_stream
+      format.turbo_stream { flash.now[:notice] = "Quote was successfully destroyed." }
     end
   end
 
