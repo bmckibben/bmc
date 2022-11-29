@@ -6278,5 +6278,15 @@
   var application = Application.start();
   application.debug = false;
   window.Stimulus = application;
+
+  // app/javascript/controllers/removals_controller.js
+  var removals_controller_default = class extends Controller {
+    remove() {
+      this.element.remove();
+    }
+  };
+
+  // app/javascript/controllers/index.js
+  application.register("removals", removals_controller_default);
 })();
 //# sourceMappingURL=assets/application.js.map
