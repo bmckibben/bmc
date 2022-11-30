@@ -1,6 +1,6 @@
 %main.container
   = link_to sanitize("&larr; Back to quotes"), quotes_path
   .header
-    %h1 New quote
+    %h1 New Product
   = turbo_frame_tag @quote do
     = render "form", quote: @quote
