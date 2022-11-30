@@ -1,0 +1,24 @@
+.empty-state {
+  padding: var(--space-m);
+  border: var(--border);
+  border-style: none;
+  text-align: center;
+  border-radius: var(--border-radius);
+  background-color: var(--color-background-alert);
+  bottom-margin: var(--space-m);
+
+  &__text {
+    font-size: var(--font-size-l);
+    color: var(--color-text-alert);
+    margin-bottom: var(--space-l);
+    font-weight: bold;
+  }
+
+    &--only-child {
+    display: none;
+
+    &:only-child {
+      display: revert;
+    }
+  }
+}

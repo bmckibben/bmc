@@ -32,7 +32,7 @@ gem "cssbundling-rails"
 gem "jbuilder"
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+#gem 'jquery-rails'
 
 gem "devise"
 

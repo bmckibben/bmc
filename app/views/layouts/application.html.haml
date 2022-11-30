@@ -13,5 +13,7 @@
     .flash{id: "flash"}
       = render "layouts/flash"
     = yield
-  %footer
-    This application is based on the tutorial for Hotwire/Turbo at #{link_to "https://www.hotrails.dev/turbo-rails"}
+    %footer.footer
+      .row
+        .col-md-4.offset-md-4
+          %p This application is based on the tutorial for Hotwire/Turbo at #{link_to "https://www.hotrails.dev/turbo-rails"}
