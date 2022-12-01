@@ -1,7 +1,7 @@
 class Task < ApplicationRecord
   belongs_to :user
-  belongs_to :product
-  belongs_to :task_status
+  belongs_to :project
+  has_one :task_status
 
 	validates :name, presence: true
 	scope :ordered, -> { order(start_at: :desc) }

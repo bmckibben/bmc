@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
   belongs_to :user
   belongs_to :product
-  belongs_to :project_status
+  has_one :project_status
 end
