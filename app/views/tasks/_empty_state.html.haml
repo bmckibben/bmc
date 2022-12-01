@@ -1,0 +1,7 @@
+.empty-state.empty-state--only-child
+	%p.empty-state__text 
+		= "You dont't have any thing to do!"
+	= link_to "Add Task", 
+		new_task_path, 
+		class: "btn btn--primary",
+		data: {turbo_frame: dom_id(Task.new)}	

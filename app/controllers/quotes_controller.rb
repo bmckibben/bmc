@@ -4,7 +4,6 @@ class QuotesController < ApplicationController
 
   def index
     @quotes = current_company.quotes.ordered
-    #flash.now[:notice] = "We are loaded."
   end
 
   def show

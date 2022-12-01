@@ -1,33 +1,14 @@
-%h1 Listing tasks
+= turbo_stream_from current_user, "tasks"
+%main.container
+	.header
+		%h1 Tasks
+		= link_to "New Task",                   
+			new_task_path,                        
+			class: "btn btn--primary",             
+			data: {turbo_frame: dom_id(Task.new)} 
+	
+	= turbo_frame_tag Task.new 
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Description
-      %th Start at
-      %th End at
-      %th User
-      %th Product
-      %th Task status
-      %th
-      %th
-      %th
-
-  %tbody
-    - @tasks.each do |task|
-      %tr
-        %td= task.name
-        %td= task.description
-        %td= task.start_at
-        %td= task.end_at
-        %td= task.user
-        %td= task.product
-        %td= task.task_status
-        %td= link_to 'Show', task
-        %td= link_to 'Edit', edit_task_path(task)
-        %td= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Task', new_task_path
+	= turbo_frame_tag "tasks" do
+		= render "tasks/empty_state"  
+		= render @tasks
