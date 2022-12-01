@@ -1,6 +1,6 @@
 %main.container
-  = link_to sanitize("&larr; Back to Product"), quotes_path
+  = link_to sanitize("&larr; Back to Quote"), quotes_path
   .header
-    %h1 Edit Product
+    %h1 Edit Quote
   = turbo_frame_tag @quote do
     = render "form", quote: @quote

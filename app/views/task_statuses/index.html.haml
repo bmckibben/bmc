@@ -1,0 +1,21 @@
+%h1 Listing task_statuses
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th
+      %th
+      %th
+
+  %tbody
+    - @task_statuses.each do |task_status|
+      %tr
+        %td= task_status.name
+        %td= link_to 'Show', task_status
+        %td= link_to 'Edit', edit_task_status_path(task_status)
+        %td= link_to 'Destroy', task_status, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Task status', new_task_status_path

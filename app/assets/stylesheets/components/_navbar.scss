@@ -22,4 +22,19 @@
   &__right {
     margin-left: auto;
   }
+
+  &__btn {
+    color: #66CCFF;
+    float: none;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: verdana, serif;
+  }
+
+  &__btn:hover {
+    color: #CC33FF !important;
+    text-decoration: underline;
+  }
+
 }

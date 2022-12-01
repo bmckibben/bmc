@@ -1,7 +1,9 @@
 .flash {
   position:fixed;
-  top: 5rem;
-  left: 50%;
+  z-index: 13; 
+  left: 50%; 
+  top: 75%; 
+  bottom: auto;
   transform: translateX(-50%);
 
   display: flex;
@@ -10,7 +12,7 @@
   gap: var(--space-s);
 
   max-width: 100%;
-  width: 60%;
+  width: 40%;
   padding: 0 var(--space-m);
 
   &__message {
@@ -19,8 +21,9 @@
     color: var(--color-text-alert);
     padding: var(--space-xs) var(--space-m);
     background-color: var(--color-background-alert);
+    box-shadow: 5px 10px 18px var(--color-black);
     animation: appear-then-fade 4s both;
-    border-radius: 10px;
+    border-radius: 3px;
     width: 100%;
   }
 }

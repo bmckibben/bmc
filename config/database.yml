@@ -30,10 +30,10 @@ development:
 
 test:
   <<: *default
-  database: quote_editor_test
+  database: projlog_test
 
 production:
   <<: *default
-  database: quote_editor_production
-  username: quote_editor
+  database: projlog_production
+  username: projlog
   password: <%= ENV["QUOTE_EDITOR_DATABASE_PASSWORD"] %>

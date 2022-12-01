@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Description:
+  = @log.description
+%p
+  %b Start at:
+  = @log.start_at
+%p
+  %b End at:
+  = @log.end_at
+%p
+  %b User:
+  = @log.user
+%p
+  %b Task:
+  = @log.task
+
+= link_to 'Edit', edit_log_path(@log)
+\|
+= link_to 'Back', logs_path
