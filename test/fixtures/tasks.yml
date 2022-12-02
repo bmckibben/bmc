@@ -1,19 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Translate form
   description: MyText
   start_at: 2022-12-01 08:54:35
   end_at: 2022-12-01 08:54:35
-  user: one
-  product: one
-  task_status: one
+  user: bmckibben
+  project: one
 
 two:
-  name: MyString
-  description: MyText
+  name: Deploy to Production
+  description: Deploy to Production
   start_at: 2022-12-01 08:54:35
   end_at: 2022-12-01 08:54:35
-  user: two
-  product: two
-  task_status: two
+  user: bmckibben
+  project: two

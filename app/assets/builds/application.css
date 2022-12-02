@@ -263,16 +263,19 @@ a:hover, a:focus, a:active {
   align-self: flex-start;
   gap: var(--space-xs);
 }
-.quote__actions .btn {
+.quote .btn {
   padding: 0;
   min-width: 5rem;
   text-align: center;
 }
-.quote__actions .btn:hover {
+.quote .btn:hover {
   box-shadow: 3px 3px 3px var(--color-black);
   background-color: var(--color-white);
   border: solid 1px var(--color-black);
   color: var(--color-black);
+}
+.quote .form_input {
+  min-width: 50%;
 }
 
 .turbo-progress-bar {

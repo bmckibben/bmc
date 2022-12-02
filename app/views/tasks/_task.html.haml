@@ -1,12 +1,12 @@
-= turbo_frame_tag Task do
-  .Task
-    = link_to Task.name, Task_path(Task), 
+= turbo_frame_tag task do
+  .quote
+    = link_to task.name, task_path(task), 
       data: {turbo_frame: "_top"}            
-    .Task__actions
+    .quote__actions
       = button_to "Delete",     
-        Task_path(Task),      
+        task_path(task),      
         method: :delete,        
         class: "btn btn--light" 
       = link_to "Edit",         
-        edit_Task_path(Task), 
+        edit_task_path(task), 
         class: "btn btn--light" 

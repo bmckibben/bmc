@@ -1,19 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyText
+  name: Translate
+  description: Translate to Spanish
   start_at: 2022-12-01 08:53:36
   end_at: 2022-12-01 08:53:36
-  user: one
-  product: one
-  project_status: one
+  user: bmckibben
+  product: two
 
 two:
-  name: MyString
-  description: MyText
+  name: Learning Journey
+  description: Learning Journey
   start_at: 2022-12-01 08:53:36
   end_at: 2022-12-01 08:53:36
-  user: two
-  product: two
-  project_status: two
+  user: bmckibben
+  product: one

@@ -5,6 +5,7 @@ class CreateProjects < ActiveRecord::Migration[7.0]
       t.text :description
       t.datetime :start_at
       t.datetime :end_at
+      t.integer :project_status
       t.references :user, null: false, foreign_key: true
       t.references :product, null: false, foreign_key: true
 

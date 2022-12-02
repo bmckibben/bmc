@@ -1,7 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Backlog
 
 two:
-  name: MyString
+  name: In Progress
+
+three:
+  name: In Review
+
+four:
+  name: Done    

@@ -5,21 +5,25 @@
 # below each fixture, per the syntax in the comments below
 #
 accountant:
-  company: kpmg
+  company: ll
   email: accountant@kpmg.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  name: George Washington
 
 manager:
-  company: kpmg
+  company: ll
   email: manager@kpmg.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  name: James Madison
 
 eavesdropper:
-  company: pwc
+  company: ll
   email: eavesdropper@pwc.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  name: Thomas Jefferson
 
 bmckibben:
-  company: pwc
+  company: cfc
   email: bmckibben@centerforcongregations.org
   encrypted_password: <%= Devise::Encryptor.digest(User, 'C_satori18') %>
+  name: Ben McKibben

@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-kpmg:
-  name: KPMG
+ll:
+  name: LiteralLight
 
-pwc:
-  name: PWC
+cfc:
+  name: Center for Congregations

@@ -4,7 +4,7 @@
       = task.errors.full_messages.to_sentence.capitalize
   = f.input :name, input_html: { autofocus: true }
   = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
-  = f.input :project_id, as: :hidden, input_html: { value: "1" }
-  = f.input :task_status_id, as: :hidden, input_html: { value: "1" }
+  = f.input :project_id, as: :hidden, input_html: { value: task.project_id }
+  = f.input :task_status_id, as: :hidden, input_html: { value: task.task_status_id }
   = link_to "Cancel", tasks_path, class: "btn btn--light"
-  = f.submit class: "btn btn--secondary"
+  = f.submit "Update", class: "btn btn--secondary"

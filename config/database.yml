@@ -11,7 +11,7 @@ default: &default
 
 development:
   <<: *default
-  database: quote_editor_development
+  database: projlog_development
   username: postgres
   password: postgres
 #work#######################################################################

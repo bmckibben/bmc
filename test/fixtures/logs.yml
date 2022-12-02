@@ -1,15 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  description: MyText
+  description: Stuff
   start_at: 2022-12-01 08:55:50
   end_at: 2022-12-01 08:55:50
-  user: one
+  user: bmckibben
   task: one
 
 two:
-  description: MyText
+  description: Troubleshoot
   start_at: 2022-12-01 08:55:50
   end_at: 2022-12-01 08:55:50
-  user: two
+  user: bmckibben
   task: two

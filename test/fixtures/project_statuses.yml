@@ -1,7 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Proposed
 
 two:
-  name: MyString
+  name: In development
+
+three:
+  name: Complete
+
+four:
+  name: Hold  

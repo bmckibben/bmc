@@ -1,13 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  description: MyText
-  user: one
-  company: one
+  name: CRG
+  description: Congregational Resource Guide
+  user: bmckibben
+  company: cfc
 
 two:
-  name: MyString
-  description: MyText
-  user: two
-  company: two
+  name: GA
+  description: Grant Application
+  user: accountant
+  company: cfc
+
+three:
+  name: ProjLog
+  description: Project Task Time Tracker
+  user: bmckibben
+  company: ll
