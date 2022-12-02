@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  start_at: 2022-12-01 08:54:35
+  end_at: 2022-12-01 08:54:35
+  user: one
+  product: one
+  task_status: one
+
+two:
+  name: MyString
+  description: MyText
+  start_at: 2022-12-01 08:54:35
+  end_at: 2022-12-01 08:54:35
+  user: two
+  product: two
+  task_status: two

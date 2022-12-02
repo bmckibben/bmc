@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :logs
+  resources :tasks
+  resources :projects
+  resources :task_statuses
+  resources :project_statuses
+  resources :products
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

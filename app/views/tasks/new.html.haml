@@ -1,0 +1,6 @@
+%main.container
+  = link_to sanitize("&larr; Back to Tasks"), tasks_path
+  .header
+    %h1 New Task
+  = turbo_frame_tag @task do
+    = render "form", task: @task

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_22_142814) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_01_133333) do
   create_table "active_admin_comments", charset: "utf8mb4", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -37,15 +37,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_142814) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "applications", charset: "utf8mb4", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_applications_on_user_id"
-  end
-
   create_table "companies", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -54,18 +45,29 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_142814) do
 
   create_table "logs", charset: "utf8mb4", force: :cascade do |t|
     t.text "description"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.bigint "task_id"
-    t.bigint "user_id"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.bigint "task_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["task_id"], name: "index_logs_on_task_id"
     t.index ["user_id"], name: "index_logs_on_user_id"
   end
 
+  create_table "products", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.bigint "company_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_products_on_company_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
   create_table "project_statuses", charset: "utf8mb4", force: :cascade do |t|
-    t.text "name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -73,14 +75,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_142814) do
   create_table "projects", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.bigint "project_status_id"
-    t.bigint "user_id"
-    t.bigint "application_id"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.bigint "user_id", null: false
+    t.bigint "product_id", null: false
+    t.bigint "project_status_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["application_id"], name: "index_projects_on_application_id"
+    t.index ["product_id"], name: "index_projects_on_product_id"
     t.index ["project_status_id"], name: "index_projects_on_project_status_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
@@ -90,11 +92,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_142814) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "company_id", null: false
+    t.boolean "active", default: false
+    t.string "author"
     t.index ["company_id"], name: "index_quotes_on_company_id"
   end
 
   create_table "task_statuses", charset: "utf8mb4", force: :cascade do |t|
-    t.text "name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -102,11 +106,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_142814) do
   create_table "tasks", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.bigint "user_id"
-    t.bigint "task_status_id"
-    t.bigint "project_id"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.bigint "user_id", null: false
+    t.bigint "project_id", null: false
+    t.bigint "task_status_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_tasks_on_project_id"
@@ -123,9 +127,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_142814) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "company_id", null: false
+    t.string "name"
     t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "logs", "tasks"
+  add_foreign_key "logs", "users"
+  add_foreign_key "products", "companies"
+  add_foreign_key "products", "users"
+  add_foreign_key "projects", "products"
+  add_foreign_key "projects", "project_statuses"
+  add_foreign_key "projects", "users"
+  add_foreign_key "tasks", "projects"
+  add_foreign_key "tasks", "task_statuses"
+  add_foreign_key "tasks", "users"
 end
