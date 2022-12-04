@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_01_132113) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_04_184010) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,6 +18,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_132113) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "line_item_dates", force: :cascade do |t|
+    t.bigint "quote_id", null: false
+    t.date "date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["date", "quote_id"], name: "index_line_item_dates_on_date_and_quote_id", unique: true
+    t.index ["date"], name: "index_line_item_dates_on_date"
+    t.index ["quote_id"], name: "index_line_item_dates_on_quote_id"
   end
 
   create_table "logs", force: :cascade do |t|
@@ -58,6 +68,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_132113) do
     t.bigint "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "project_status_id"
     t.index ["product_id"], name: "index_projects_on_product_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
@@ -87,6 +98,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_132113) do
     t.bigint "project_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "task_status_id"
     t.index ["project_id"], name: "index_tasks_on_project_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
@@ -106,6 +118,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_132113) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "line_item_dates", "quotes"
   add_foreign_key "logs", "tasks"
   add_foreign_key "logs", "users"
   add_foreign_key "products", "companies"

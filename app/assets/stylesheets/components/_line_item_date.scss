@@ -1,4 +1,4 @@
-.quote {
+.line-item-date {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,8 +10,19 @@
   margin-bottom: var(--space-m);
   padding: var(--space-xs);
 
-  @include media(tabletAndUp) {
-    padding: var(--space-xs) var(--space-m);
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xs);
+  }
+
+  &__title {
+    font-size: var(--font-size-xl);
+
+    @include media(tabletAndUp) {
+      font-size: var(--font-size-xxl);
+    }
   }
 
   &__actions {
@@ -20,8 +31,10 @@
     align-self: flex-start;
     gap: var(--space-xs);
   }
-
+  
   .form_input {
     min-width: 50%;
-  }  
+  }
+
 }
+
