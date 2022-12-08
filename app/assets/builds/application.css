@@ -237,6 +237,9 @@ a:hover, a:focus, a:active {
 .form__input--invalid {
   border-color: var(--color-primary);
 }
+.form__input[type=date] {
+  width: 20rem;
+}
 
 .visually-hidden {
   position: absolute !important;

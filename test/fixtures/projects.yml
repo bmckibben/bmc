@@ -7,6 +7,7 @@ one:
   end_at: 2022-12-01 08:53:36
   user: bmckibben
   product: two
+  project_status_id: 1
 
 two:
   name: Learning Journey
@@ -15,3 +16,4 @@ two:
   end_at: 2022-12-01 08:53:36
   user: bmckibben
   product: one
+  project_status_id: 1

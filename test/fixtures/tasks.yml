@@ -7,6 +7,7 @@ one:
   end_at: 2022-12-01 08:54:35
   user: bmckibben
   project: one
+  task_status_id: 1
 
 two:
   name: Deploy to Production
@@ -15,3 +16,4 @@ two:
   end_at: 2022-12-01 08:54:35
   user: bmckibben
   project: two
+  task_status_id: 1

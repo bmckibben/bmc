@@ -25,4 +25,7 @@
       border-color: var(--color-primary);
     }
   }
+  &__input[type='date'] {
+    width: 20rem;
+  }
 }
