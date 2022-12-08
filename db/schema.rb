@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_04_184010) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_08_191530) do
   create_table "active_admin_comments", charset: "utf8mb4", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -53,6 +53,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_184010) do
     t.index ["quote_id"], name: "index_line_item_dates_on_quote_id"
   end
 
+  create_table "line_items", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "line_item_date_id", null: false
+    t.string "name", null: false
+    t.text "description"
+    t.integer "quantity", null: false
+    t.decimal "unit_price", precision: 10, scale: 2, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["line_item_date_id"], name: "index_line_items_on_line_item_date_id"
+  end
+
   create_table "logs", charset: "utf8mb4", force: :cascade do |t|
     t.text "description"
     t.datetime "start_at"
@@ -89,7 +100,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_184010) do
     t.datetime "end_at"
     t.bigint "user_id", null: false
     t.bigint "product_id", null: false
-    t.bigint "project_status_id", null: false
+    t.bigint "project_status_id", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_projects_on_product_id"
@@ -120,7 +131,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_184010) do
     t.datetime "end_at"
     t.bigint "user_id", null: false
     t.bigint "project_id", null: false
-    t.bigint "task_status_id", null: false
+    t.bigint "task_status_id", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_tasks_on_project_id"
@@ -144,6 +155,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_184010) do
   end
 
   add_foreign_key "line_item_dates", "quotes"
+  add_foreign_key "line_items", "line_item_dates"
   add_foreign_key "logs", "tasks"
   add_foreign_key "logs", "users"
   add_foreign_key "products", "companies"
