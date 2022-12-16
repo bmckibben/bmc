@@ -10,8 +10,8 @@ gem "rails", "~> 7.0.4"
 gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
-#gem "mysql2"
+#gem "pg", "~> 1.1"
+gem "mysql2"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -37,6 +37,8 @@ gem "jbuilder"
 # Devise is our authentication framework
 gem "devise"
 
+# Nice Icons
+gem "font-awesome-sass"
 
 # prefer HAML markup to ERB
 gem 'haml-rails'

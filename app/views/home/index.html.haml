@@ -5,7 +5,7 @@
     %li.nav-item
       %a.nav-link{:href => "#about"}About
     %li.nav-item
-      %a.nav-link{:href => "#novel"}Novel
+      %a.nav-link{:href => "#expertise"}Expertise
     %li.nav-item
       %a.nav-link{:href => "#quotes"}Quotes        
     %li.nav-item
@@ -19,46 +19,146 @@
 
   .container
     .first-content
-      %h1 Ben M Curry
-      %span Author
+      %h1 LiteralLight
+      %span The Website of Ben McKibben
 #about.service-content
   .container
+    .section-title.text-center.center
+      %h2
+        About
+      %hr
     .row
-      .col-md-5
-        .left-text
-          %h4 More About Ben M Curry
-          .line-dec
-          %p I am an aspiring author in the middle of the second draft of my first novel. During the day-time I work as an Internet Application Developer.
-          %p As a child I lived in several different places. My father was in the US Army so we found ourselves in a new locatin every four years. I now reside in the United States but I am a world traveler and lived in Malaysia for ten years during my earlier adulthood.
-          %p More than getting to change as a child, learned to embrace it. Change is an integral part of my psyche and because or that I embrace diversity in all its forms.
-          %p I have a passion for Science Fiction. Details of my current work is available below.
+      .col-md-4
+        = image_tag("switching03.jpg", class: "img-responsive" ) 
+      .col-md-4
+        .about-text
+          %h4
+            Who I Am
           %p
-            Please share my
-            %a{:href => "https://www.benmcurry.com", :rel => "nofollow"} website
-            with your friends or collegues. Thank you.
-      .col-md-7
-        .row
-          .col-md-12
-            .service-item{id: "author-pic"}
-              = image_tag "author.jpg",  class: "author-img"
-            }
-#novel.tabs-content
-  .container
+            A puzzle solver. I am a Artisan, Craftsman, Shokunin. I take a collection of raw materials and create something that is not only useful, but also aesthetically pleasing. I have an innate sense of pattern recognition.
+          %p
+            I am an experienced full stack web application developer. Not websites, but thin client applications.
+      .col-md-4
+        .about-text
+          %h4
+            This Website
+          %p
+            Remember those &ldquo;Under Construction&rdquo; pages that were the anathema of ancient web development? This page is always under construction. It is my sandbox and a showcase of my talents and technical expertise.</p>
+          %p
+            It is an implementation of a template by Templatewire adapted to a Ruby on Rails environment.
     .row
-      .col-md-6
-        .row
-          .col-md-12
-            .service-item
-              = image_tag "book.png"    
-      .col-md-6
-        .left-text
-          %h4 The Science of Miracles
-          .line-dec
-          %p Paxxa was abducted by extraterrestrials as a toddler and taken to be raised in the culture of the Raquesti. Paxxa will return to earth as a emissary for the alien culture. Paxxa’s mission is to teach Raquesti science to the people of earth in the hope of recreating knowledge the Raquesti lost in a devastating war.
-          %p Greg Macsen is a former physics professor with a theory of hyper-dimensional energy.  A totalitarian regime has forced him to work in a secret weapons laboratory.  He has been broken by the sadistic head of national security who is using the memory of his ex-girlfriend to taunt him.
-          %p Greg is rescued and meets Paxxa in the sanctuary of an underground resistance movement. Together they  create a device that can help the resistance battle the corrupt government. What will happen when the government tries to thwart their plans?
+      .col-md-4.offset-md-4
+        .about-text
+          %h4
+            Career        
+          %p
+            When people ask me what I do the easiest answer is: I am a programmer. If I say I am an application developer I receive a blank stare. I make a distinction. A programmer is someone who writes code to tell a computer what to do. An application developer is someone who writes code that allows a non-programmer to tell a computer what to do. I am an Application Developer.
+      .col-md-4
+        .about-text
+          %h4
+            Experience        
+          %p
+            I have traveled the world and had the experience to do things other people don't even think about. I have been:
+            %ul
+              %li
+                Found my true love in Moscow, Russia
+              %li  
+                Been a starving student in Wakiki
+              %li 
+                Eaten wok fried noodles on the streets of Kuala Lumpur
+              %li  
+                Para-sailed in Bali
+              %li  
+                Traveled by train across southern India
+              %li
+                Ridden through Nepal on top of a bus
+              %li
+                Wandered neon lit streets of Kowloon
+              %li
+                Climbed highest peak in southeast Asia
+              %li
+                Dined along the banks of the Chao Phraya
+              %li
+                Shopped on Orchard Road, Oxford Street, and the Champs-Élysées
+              %li
+                Been awed by Monet's Water Lilies at the Musée de l'Orangerie
 
-          
+#expertise.tabs-content
+  .container
+    .section-title.text-center.center
+      %h2
+        Expertise
+      %hr
+      .row
+        .col-md-3.col-sm-6
+          .service
+            %i.fab.fa-html5
+            %h3
+              HTML
+            %p
+              I&apos;ve worked with all of its variations.
+        .col-md-3.col-sm-6
+          .service
+            %i.fa.fa-cogs
+            %h3
+              Javascript
+            %p
+              jQuery
+
+        .col-md-3.col-sm-6
+          .service
+            %i.fab.fa-css3-alt
+            %h3
+              CSS
+            %p
+              Bootstrap rules!
+
+        .col-md-3.col-sm-6
+          .service
+            %i.fas.fa-gem
+            %h3
+              Ruby On Rails
+            %p
+              The newest addition to my toolkit.
+      .space
+      .row
+        .col-md-3.col-sm-6
+          .service
+            %i.fa.fa-code
+            %h3
+              Coldfusion
+            %p
+              An efficient language for web application development. My staple for fifteen years.
+        .col-md-3.col-sm-6
+          .service
+            %i.fa.fa-database
+            %h3
+              Database
+            %p
+              Oracle, MS-SQLServer, MongoDB, PostgreSQL, MySQL
+        .col-md-3.col-sm-6
+          .service
+            %i.fa.fa-bar-chart
+            %h3
+              R with R Studio
+            %p
+              Used in a recent courses for Big Data and Machine Learning.
+              %br
+              Course Project:
+              %br
+              =link_to "Presentation", url: "http://rstudio-pubs-static.s3.amazonaws.com/126794_136b8a1f10cf490dbbc02db91d7437c1.html#/", target:"_blank"
+                
+              %br
+              =link_to "Application", url: "https://bmckibben.shinyapps.io/data_products/", target:"_blank"
+                
+        .col-md-3.col-sm-6
+          .service
+            %i.fa.fa-medkit
+            %h3
+              HL7
+            %p
+              The standard for transfer of clinical and administrative data between software applications used by healthcare providers.
+
 
 = render "quotes"               
 

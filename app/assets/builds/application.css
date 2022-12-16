@@ -615,6 +615,10 @@ a:hover {
   animation-name: fadeInRight;
 }
 
+.service-content h2, .service-content h3, .service-content h4, .service-content h5, .service-content h6, .tabs-content h2, .tabs-content h3, .tabs-content h4, .tabs-content h5, .tabs-content h6, .projects-content h2, .projects-content h3, .projects-content h4, .projects-content h5, .projects-content h6, .contact-content h2, .contact-content h3, .contact-content h4, .contact-content h5, .contact-content h6 {
+  font-family: Rokkitt;
+}
+
 .parallax-content {
   width: 100%;
   min-height: 100vh;
@@ -662,7 +666,6 @@ a:hover {
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 15vh;
-  background-image: url("service-bg.jpg");
   background-attachment: fixed;
   min-height: 100vh;
   background-size: cover;
@@ -720,6 +723,18 @@ h4, .h4 {
   height: auto;
 }
 
+.tabs-content {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15vh;
+  background-attachment: fixed;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center center;
+}
+.tabs-content .row {
+  margin-bottom: calc(10 * var(--bs-gutter-x));
+}
 .tabs-content .left-text h4 {
   font-size: 24px;
   font-weight: 500;
@@ -732,7 +747,7 @@ h4, .h4 {
   margin: 20px 0px 20px 0px;
 }
 .tabs-content .left-text p {
-  color: #000;
+  color: var(--color-light);
 }
 .tabs-content .left-text ul {
   padding: 0;
@@ -746,6 +761,9 @@ h4, .h4 {
 }
 .tabs-content .left-text .primary-button {
   margin: 30px 0px;
+}
+.tabs-content p {
+  color: var(--color-light);
 }
 .tabs-content .service-item {
   background-color: rgba(150, 150, 150, 0.5);
