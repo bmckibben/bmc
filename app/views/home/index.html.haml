@@ -7,6 +7,8 @@
     %li.nav-item
       %a.nav-link{:href => "#expertise"}Expertise
     %li.nav-item
+      %a.nav-link{:href => "#team"}Team       
+    %li.nav-item
       %a.nav-link{:href => "#quotes"}Quotes        
     %li.nav-item
       %a.nav-link{:href => "#contact-us"}Contact
@@ -21,6 +23,10 @@
     .first-content
       %h1 LiteralLight
       %span The Website of Ben McKibben
+      %br
+      %span
+        = DateTime.now.in_time_zone('Indiana (East)').to_formatted_s(:stardate)
+
 #about.service-content
   .container
     .section-title.text-center.center
@@ -92,7 +98,7 @@
       .row
         .col-md-3.col-sm-6
           .service
-            %i.fab.fa-html5
+            =icon("fa-brands","fa-html5")
             %h3
               HTML
             %p
@@ -159,6 +165,38 @@
             %p
               The standard for transfer of clinical and administrative data between software applications used by healthcare providers.
 
+#team.team-content
+  .container
+    .section-title.center
+      %h2
+        Meet the team
+      %hr
+      %p
+        Who is responsible for all this?
+    .row
+      .col-sm-6.col-md-3
+        =image_tag("team/01.jpg",  class: "img-thumbnail team-img", alt: "...") 
+        .caption
+          %h3
+            Shokunin
+      .col-sm-6.col-md-3
+        .thumbnail
+          =image_tag("team/02.png",  class: "img-thumbnail team-img", alt: "...")
+          .caption
+            %h3
+              Code Monkey
+      .col-sms-6.col-md-3
+        .thumbnail
+          =image_tag("team/03.jpg",  class: "img-thumbnail team-img", alt: "...")
+          .caption
+            %h3
+              ウルトラマン
+      .col-sm-6.col-md-3
+        .thumbnail
+          =image_tag("team/04.jpg",  class: "img-thumbnail team-img", alt: "...")
+          .caption
+            %h3
+              Role Model
 
 = render "quotes"               
 
