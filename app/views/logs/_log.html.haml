@@ -1,0 +1,12 @@
+= turbo_frame_tag log do
+  .quote
+    = link_to log.description, log_path(log), 
+      data: {turbo_frame: "_top"}            
+    .quote__actions
+      = button_to "Delete",     
+        log_path(log),      
+        method: :delete,        
+        class: "btn btn--light" 
+      = link_to "Edit",         
+        edit_log_path(log), 
+        class: "btn btn--light" 

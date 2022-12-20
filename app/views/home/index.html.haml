@@ -13,7 +13,7 @@
     %li.nav-item
       %a.nav-link{:href => "#contact-us"}Contact
     %li.nav-item
-      = link_to "Log", quotes_path, class: "nav-link" 
+      = link_to "Log", tasks_path, class: "nav-link" 
 
 #home.parallax-content.baner-content
   #readout    
@@ -98,14 +98,14 @@
       .row
         .col-md-3.col-sm-6
           .service
-            =icon("fa-brands","fa-html5")
+            =local_icon("html5-white", "expertise")
             %h3
               HTML
             %p
               I&apos;ve worked with all of its variations.
         .col-md-3.col-sm-6
           .service
-            %i.fa.fa-cogs
+            =local_icon("square-js-white", "expertise")
             %h3
               Javascript
             %p
@@ -113,7 +113,7 @@
 
         .col-md-3.col-sm-6
           .service
-            %i.fab.fa-css3-alt
+            =local_icon("css3-alt-white", "expertise")
             %h3
               CSS
             %p
@@ -121,7 +121,7 @@
 
         .col-md-3.col-sm-6
           .service
-            %i.fas.fa-gem
+            =local_icon("gem-solid-white", "expertise")
             %h3
               Ruby On Rails
             %p
@@ -130,7 +130,7 @@
       .row
         .col-md-3.col-sm-6
           .service
-            %i.fa.fa-code
+            =local_icon("code-solid-white", "expertise")
             %h3
               Coldfusion
             %p
@@ -139,12 +139,12 @@
           .service
             %i.fa.fa-database
             %h3
-              Database
+              =local_icon("database-solid-white", "expertise")
             %p
               Oracle, MS-SQLServer, MongoDB, PostgreSQL, MySQL
         .col-md-3.col-sm-6
           .service
-            %i.fa.fa-bar-chart
+            =local_icon("bar-chart", "expertise")
             %h3
               R with R Studio
             %p
@@ -159,7 +159,7 @@
                 
         .col-md-3.col-sm-6
           .service
-            %i.fa.fa-medkit
+            =local_icon("file-medical-solid-white", "expertise")
             %h3
               HL7
             %p
@@ -225,18 +225,8 @@
                     %button#form-submit.btn.btn--primary{:type => "submit"} Send Message
                     #snackbar
 
-%footer
-  .container
-    .row
-      .col-md-12
-        .primary-button
-          %a{:href => "#home"} Back To Top
-        %p
-          Copyright © #{Time.now.year} Ben M Curry
-          
-          \- Design:
-          %a{:href => "https://templatemo.com", :rel => "nofollow noopener"}
-            %em TemplateMo 
+
+            
 :javascript
 
     var line_count = 0;

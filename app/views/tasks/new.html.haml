@@ -1,6 +1,7 @@
 %main.container
-  = link_to sanitize("&larr; Back to Tasks"), tasks_path
-  .header
-    %h1 New Task
-  = turbo_frame_tag @task do
-    = render "form", task: @task
+	= link_to sanitize("&larr; Back to Tasks"), tasks_path
+	= turbo_frame_tag "modal" do
+		.panel-heading
+			%h1.h3 New Task
+		.panel-body
+			= render "form", task: @task

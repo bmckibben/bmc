@@ -1,7 +1,7 @@
 %header.navbar
-	- if user_signed_in?
+	- if user_signed_in?		
 		.navbar__brand
-			= current_company.name
+			= image_tag("literallight_txt.png")
 		.navbar__name
 			= current_user.name
 		= link_to "Home",

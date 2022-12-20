@@ -10,5 +10,11 @@ en:
   helpers:
     submit:
       quote:
-        create: Create quote
-        update: Update quote
+        create: Create
+        update: Update
+      task:
+        create: Create
+        update: Update 
+      log:
+        create: Create
+        update: Update 

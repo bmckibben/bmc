@@ -48,12 +48,12 @@
 	text-align: center;
 	top: 30%;
 	left: 40%;
-	font-family: Syncopate;
+	//font-family: Syncopate;
 	overflow: hidden;
 	.modal-content {
-		border: 2px solid #fff;
-		border-radius: _rem(5);
-		background-color: #fcda00;
+		border: 2px solid #000;
+		border-radius: _rem(25);
+		background-color: #fff;
 		margin: 15% auto;
 		padding: _rem(34);
 		width: _rem(500);

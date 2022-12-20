@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
  
-  # GET /homes or /homes.json
+  skip_before_action :authenticate_user! 
+
   def index
     render layout: "home"
   end
@@ -16,7 +17,7 @@ class HomeController < ApplicationController
 
   		}
   		format.js {
-  			render("home/snackbar", locals: {message: @message})
+  			flash.now[:notice] = "Quote was successfully created." 
   		}
   	end
   end

@@ -1,5 +1,7 @@
-%h1 New log
-
-= render 'form'
-
-= link_to 'Back', logs_path
+%main.container
+	= link_to sanitize("&larr; Back to Time Logs"), logs_path
+	= turbo_frame_tag "modal" do
+		.panel-heading
+			%h1.h3 New Log
+		.panel-body
+			= render "form", log: @log

@@ -6,7 +6,7 @@
 
   background-color: var(--color-white);
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-small);
+  //box-shadow: var(--shadow-small);
   margin-bottom: var(--space-m);
   padding: var(--space-xs);
 
@@ -34,6 +34,14 @@
   .form_input {
     min-width: 50%;
   }  
+}
+
+.project-badge {
+  min-width: 22rem;
+  padding: 0 1rem 0;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
 }
 
 .quote-item {

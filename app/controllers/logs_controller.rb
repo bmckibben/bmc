@@ -3,7 +3,7 @@ class LogsController < ApplicationController
 
   # GET /logs or /logs.json
   def index
-    @logs = Log.all
+    @logs = current_user.logs.ordered
   end
 
   # GET /logs/1 or /logs/1.json
@@ -12,7 +12,7 @@ class LogsController < ApplicationController
 
   # GET /logs/new
   def new
-    @log = Log.new
+    @log = Log.new(user_id: current_user.id)
   end
 
   # GET /logs/1/edit
@@ -21,39 +21,38 @@ class LogsController < ApplicationController
 
   # POST /logs or /logs.json
   def create
-    @log = Log.new(log_params)
+    @log = current_user.logs.build(log_params)
 
     respond_to do |format|
       if @log.save
-        format.html { redirect_to log_url(@log), notice: "Log was successfully created." }
-        format.json { render :show, status: :created, location: @log }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @log.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        format.html { redirect_to logs_path, notice: "Log was successfully created." }
+        format.turbo_stream { flash.now[:notice] = "Log was successfully created." }
       end
+    else
+      render :new, status: :unprocessable_entity
+    end
     end
   end
 
   # PATCH/PUT /logs/1 or /logs/1.json
   def update
-    respond_to do |format|
-      if @log.update(log_params)
-        format.html { redirect_to log_url(@log), notice: "Log was successfully updated." }
-        format.json { render :show, status: :ok, location: @log }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @log.errors, status: :unprocessable_entity }
+    if @log.update(task_params)
+      respond_to do |format|
+        format.html { redirect_to tasks_path, notice: "Log was successfully updated." }
+        format.turbo_stream { flash.now[:notice] = "Log was successfully updated." }
       end
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   # DELETE /logs/1 or /logs/1.json
   def destroy
     @log.destroy
-
     respond_to do |format|
-      format.html { redirect_to logs_url, notice: "Log was successfully destroyed." }
-      format.json { head :no_content }
+      format.html { redirect_to tasks_path, notice: "Log was successfully destroyed." }
+      format.turbo_stream { flash.now[:notice] = "Log was successfully destroyed." }
     end
   end
 

@@ -1,0 +1,15 @@
+%footer
+	.row
+		.col-md-12
+			.primary-button
+				%a{:href => "#home"} Back To Top
+			%p
+				= "Copyright © #{Time.now.year} Ben McKibben [v.#{DateTime.now.in_time_zone('Indiana (East)').to_formatted_s(:stardate)}]"
+	.row
+		.col-md-4.offset-md-4
+			%p 
+				= "This application is based on the tutorial for Hotwire/Turbo at "
+				= link_to "TurboRails", "https://www.hotrails.dev/turbo-rails",  :rel => "nofollow noopener" 
+			%p      
+				= "Home page template by: "
+				= link_to "TemplateMo", "https://www.hotrails.dev/turbo-rails",  :rel => "nofollow noopener"

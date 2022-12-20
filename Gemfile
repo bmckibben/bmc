@@ -37,9 +37,6 @@ gem "jbuilder"
 # Devise is our authentication framework
 gem "devise"
 
-# Nice Icons
-gem "font-awesome-sass"
-
 # prefer HAML markup to ERB
 gem 'haml-rails'
 
@@ -47,10 +44,10 @@ gem 'haml-rails'
 gem "redis", "~> 4.0"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
+gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
@@ -58,8 +55,6 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-# Markup and design related libraries
-gem 'bootstrap-sass'
 # Use Sass to process CSS
 gem "sassc-rails"
 

@@ -1,8 +1,13 @@
 = turbo_frame_tag task do
   .quote
     = link_to task.name, task_path(task), 
-      data: {turbo_frame: "_top"}            
+      data: {turbo_frame: "_top"}
+
     .quote__actions
+      .project-badge{style: "background-color: #{task.project.product.color}"}
+        = task.project.name
+        = " : "
+        = task.project.product.name        
       = button_to "Delete",     
         task_path(task),      
         method: :delete,        

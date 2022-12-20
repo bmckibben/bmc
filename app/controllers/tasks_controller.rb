@@ -1,5 +1,4 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_task, only: %i[ show edit update destroy ]
 
   def index
@@ -10,7 +9,8 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
+    # initialize project and status until we have a select setup
+    @task = Task.new(project_id:1, task_status_id: 1)
   end
 
   def create

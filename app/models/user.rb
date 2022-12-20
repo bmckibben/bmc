@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable,  :validatable
   belongs_to :company
   has_many :tasks
+  has_many :logs
+  has_many :projects
   
 
   # def name

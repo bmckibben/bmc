@@ -1,10 +1,12 @@
 = simple_form_for task, html: { class: "quote form" } do |f|
-  - if task.errors.any?
-    .error-message
-      = task.errors.full_messages.to_sentence.capitalize
-  = f.input :name, input_html: { autofocus: true }
-  = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
-  = f.input :project_id, as: :hidden, input_html: { value: task.project_id }
-  = f.input :task_status_id, as: :hidden, input_html: { value: task.task_status_id }
-  = link_to "Cancel", tasks_path, class: "btn btn--light"
-  = f.submit "Update", class: "btn btn--secondary"
+	- if task.errors.any?
+		.error-message
+			= task.errors.full_messages.to_sentence.capitalize
+	.col-auto.flex-grow-1    
+		= f.input :name, input_html: { autofocus: true }
+		= f.input :user_id, as: :hidden, input_html: { value: current_user.id }
+		= f.input :project_id, as: :hidden, input_html: { value: task.project_id }
+		= f.input :task_status_id, as: :hidden, input_html: { value: task.task_status_id }
+	.col-auto  
+		= link_to "Cancel", tasks_path, class: "btn btn--light"
+		= f.submit class: "btn btn--secondary"

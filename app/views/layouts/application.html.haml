@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Ben M Curry
+    %title Ben McKibben | Web Application Developer
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     = csrf_meta_tags
     = csp_meta_tag
@@ -13,7 +13,7 @@
     .flash{id: "flash"}
       = render "layouts/flash"
     = yield
-    %footer.footer
-      .row
-        .col-md-4.offset-md-4
-          %p This application is based on the tutorial for Hotwire/Turbo at #{link_to "https://www.hotrails.dev/turbo-rails"}
+    = render "layouts/footer"
+    .modal{tabindex: -1, data:{controller: "modal", action: "turbo:frame-load->modal#open turbo:submit-end->modal#close" }}
+      .panel.panel-default
+        = turbo_frame_tag "modal"

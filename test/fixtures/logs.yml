@@ -13,3 +13,31 @@ two:
   end_at: 2022-12-01 08:55:50
   user: bmckibben
   task: two
+
+three:
+  description: Code
+  start_at: 2022-12-04 08:55:50
+  end_at: 2022-12-04 14:55:50
+  user: bmckibben
+  task: three
+
+four:
+  description: Code
+  start_at: 2022-12-05 08:55:50
+  end_at: 2022-12-05 14:55:50
+  user: bmckibben
+  task: three  
+
+five:
+  description: Coded footer
+  start_at: 2022-12-05 08:55:50
+  end_at: 2022-12-05 14:55:50
+  user: bmckibben
+  task: three   
+
+six:
+  description: Install Devise
+  start_at: 2022-12-06 08:55:50
+  end_at: 2022-12-06 14:55:50
+  user: bmckibben
+  task: four

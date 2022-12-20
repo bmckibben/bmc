@@ -26,8 +26,8 @@
   --space-xxl: 2.5rem;
   --space-xxxl: 3rem;
   --space-xxxxl: 4rem;
-  --color-primary: hsl(350, 67%, 50%);
-  --color-primary-rotate: hsl(10, 73%, 54%);
+  --color-primary: hsl(203, 100%, 50%);
+  --color-primary-rotate: hsl(180, 73%, 54%);
   --color-primary-bg: hsl(0, 85%, 96%);
   --color-secondary: hsl(101, 45%, 56%);
   --color-secondary-rotate: hsl(120, 45%, 56%);
@@ -126,6 +126,10 @@ a:hover, a:focus, a:active {
 
 .flex-column {
   flex-direction: column !important;
+}
+
+.center {
+  text-align: center;
 }
 
 @keyframes appear-then-fade {
@@ -248,7 +252,6 @@ a:hover, a:focus, a:active {
   gap: var(--space-s);
   background-color: var(--color-white);
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-small);
   margin-bottom: var(--space-m);
   padding: var(--space-xs);
 }
@@ -276,6 +279,14 @@ a:hover, a:focus, a:active {
 }
 .quote .form_input {
   min-width: 50%;
+}
+
+.project-badge {
+  min-width: 22rem;
+  padding: 0 1rem 0;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
 }
 
 .quote-item {
@@ -377,13 +388,18 @@ a:hover, a:focus, a:active {
   align-items: center;
   box-shadow: var(--shadow-large);
   padding: var(--space-xs) var(--space-m);
-  margin-bottom: var(--space-xxl);
   background-color: var(--color-black);
 }
 .navbar__brand {
   font-weight: bold;
   font-size: var(--font-size-xl);
   color: var(--color-text-header);
+}
+.navbar__brand img {
+  width: 100%;
+  height: auto;
+  max-width: 444px;
+  max-height: 40px;
 }
 .navbar__name {
   font-weight: bold;
@@ -456,13 +472,12 @@ a:hover, a:focus, a:active {
   text-align: center;
   top: 30%;
   left: 40%;
-  font-family: Syncopate;
   overflow: hidden;
 }
 .modal .modal-content {
-  border: 2px solid #fff;
-  border-radius: _rem(5);
-  background-color: #fcda00;
+  border: 2px solid #000;
+  border-radius: _rem(25);
+  background-color: #fff;
   margin: 15% auto;
   padding: _rem(34);
   width: _rem(500);
@@ -570,6 +585,13 @@ a:hover, a:focus, a:active {
   display: revert;
 }
 
+.panel-default {
+  background-color: var(--color-white);
+  border: 1px solid #000;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
 .container {
   width: 100%;
   padding-right: var(--space-xs);
@@ -604,12 +626,58 @@ a:hover, a:focus, a:active {
   }
 }
 
-.footer {
+footer {
+  text-align: center;
+  padding: 70px 0px;
   position: absolute;
   bottom: 0;
   background-color: transparent;
   color: var(--color-glint);
   width: 100%;
+  height: 160px;
+}
+footer .primary-button {
+  margin-bottom: 10px;
+}
+footer ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+footer ul li {
+  display: inline-block;
+  margin: 0px 4px;
+}
+footer ul li a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  display: inline-block;
+  background-color: rgb(45, 119, 175);
+  color: #282b2f;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.5s;
+  font-size: 17px;
+}
+footer ul li a:hover {
+  color: #282b2f;
+  background-color: #ff8e43;
+}
+footer p {
+  font-size: 12px;
+  color: #fff;
+  margin-top: 5px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  margin-bottom: 0px;
+  line-height: 20px;
+}
+footer em {
+  color: rgb(45, 119, 175);
+  font-weight: 600;
+  font-style: normal;
 }
 
 /*
@@ -1004,59 +1072,11 @@ section {
   padding: 30px 20px;
 }
 
-footer {
-  text-align: center;
-  background-color: #282b2f;
-  padding: 70px 0px;
-}
-
-footer .primary-button {
-  margin-bottom: 30px;
-}
-
-footer ul {
-  padding: 0px;
-  margin: 0px;
-  list-style: none;
-}
-
-footer ul li {
-  display: inline-block;
-  margin: 0px 4px;
-}
-
-footer ul li a {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  display: inline-block;
-  background-color: rgb(45, 119, 175);
-  color: #282b2f;
-  border-radius: 50%;
-  text-decoration: none;
-  transition: all 0.5s;
-  font-size: 17px;
-}
-
-footer ul li a:hover {
-  color: #282b2f;
-  background-color: #ff8e43;
-}
-
-footer p {
-  font-size: 12px;
-  color: #fff;
-  margin-top: 15px;
-  color: #fff;
-  letter-spacing: 0.5px;
-  margin-bottom: 0px;
-}
-
-footer em {
-  color: rgb(45, 119, 175);
-  font-weight: 600;
-  font-style: normal;
+.expertise {
+  height: var(--font-size-xxxxl) !important;
+  width: auto;
+  background: transparent;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 767px) {

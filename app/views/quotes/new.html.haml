@@ -1,6 +1,6 @@
 %main.container
-  = link_to sanitize("&larr; Back to quotes"), quotes_path
-  .header
-    %h1 New Quote
-  = turbo_frame_tag @quote do
-    = render "form", quote: @quote
+	= turbo_frame_tag "modal" do
+		.panel-heading
+			%h1.h3 New quote
+		.panel-body
+			= render "form", quote: @quote
