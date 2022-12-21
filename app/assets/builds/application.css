@@ -33,6 +33,8 @@
   --color-secondary-rotate: hsl(120, 45%, 56%);
   --color-tertiary: hsl(49, 89%, 64%);
   --color-glint: hsl(210, 100%, 82%);
+  --color-menu-link: hsl(200, 100%, 70%);
+  --color-menu-link-hover: hsl(300, 100%, 50%);
   --color-white: hsl(0, 0%, 100%);
   --color-background: hsl(30, 50%, 98%);
   --color-light: hsl(0, 6%, 93%);
@@ -411,7 +413,7 @@ a:hover, a:focus, a:active {
   margin-left: auto;
 }
 .navbar__btn {
-  color: #66CCFF;
+  color: var(--color-menu-link);
   float: none;
   padding: 10px 15px;
   text-decoration: none;
@@ -419,7 +421,7 @@ a:hover, a:focus, a:active {
   font-family: verdana, serif;
 }
 .navbar__btn:hover {
-  color: #CC33FF !important;
+  color: var(--color-menu-link-hover) !important;
   text-decoration: underline;
 }
 
@@ -588,8 +590,21 @@ a:hover, a:focus, a:active {
 .panel-default {
   background-color: var(--color-white);
   border: 1px solid #000;
-  border-radius: 2rem;
-  padding: 2rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: var(--space-m);
+}
+
+.log-time input, .log-time textarea, .log-time select {
+  border: none;
+  height: 2rem;
+}
+.log-time select {
+  margin-right: 1rem;
+  float: right;
+}
+.log-time textarea {
+  height: 2.5rem;
 }
 
 .container {
@@ -628,42 +643,15 @@ a:hover, a:focus, a:active {
 
 footer {
   text-align: center;
-  padding: 70px 0px;
   position: absolute;
   bottom: 0;
   background-color: transparent;
   color: var(--color-glint);
   width: 100%;
-  height: 160px;
+  height: 120px;
 }
 footer .primary-button {
   margin-bottom: 10px;
-}
-footer ul {
-  padding: 0px;
-  margin: 0px;
-  list-style: none;
-}
-footer ul li {
-  display: inline-block;
-  margin: 0px 4px;
-}
-footer ul li a {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  display: inline-block;
-  background-color: rgb(45, 119, 175);
-  color: #282b2f;
-  border-radius: 50%;
-  text-decoration: none;
-  transition: all 0.5s;
-  font-size: 17px;
-}
-footer ul li a:hover {
-  color: #282b2f;
-  background-color: #ff8e43;
 }
 footer p {
   font-size: 12px;
@@ -678,6 +666,13 @@ footer em {
   color: rgb(45, 119, 175);
   font-weight: 600;
   font-style: normal;
+}
+footer a {
+  color: var(--color-menu-link);
+}
+footer a:hover {
+  color: var(--color-menu-link-hover);
+  text-decoration: underline;
 }
 
 /*
@@ -2292,4 +2287,63 @@ Javascript disabled
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
+}
+
+/* Abreabiated version of what I need from Bootstrap */
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+.row .col-md-1 {
+  flex: 0 0 auto;
+  width: 8.33333333%;
+}
+.row .col-md-2 {
+  flex: 0 0 auto;
+  width: 16.66666667%;
+}
+.row .col-md-3 {
+  flex: 0 0 auto;
+  width: 25%;
+}
+.row .col-md-4 {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+}
+.row .col-md-5 {
+  flex: 0 0 auto;
+  width: 41.66666667%;
+}
+.row .col-md-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+.row .col-md-7 {
+  flex: 0 0 auto;
+  width: 58.33333333%;
+}
+.row .col-md-8 {
+  flex: 0 0 auto;
+  width: 66.66666667%;
+}
+.row .col-md-9 {
+  flex: 0 0 auto;
+  width: 75%;
+}
+.row .col-md-10 {
+  flex: 0 0 auto;
+  width: 83.33333333%;
+}
+.row .col-md-11 {
+  flex: 0 0 auto;
+  width: 91.66666667%;
+}
+.row .col-md-12 {
+  flex: 0 0 auto;
+  width: 100%;
 }

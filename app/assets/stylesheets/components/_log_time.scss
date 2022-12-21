@@ -1,0 +1,13 @@
+.log-time {
+	input, textarea, select {
+		border: none;
+		height: 2rem;
+	}
+	select {
+		margin-right: 1rem;
+		float:right;
+	}
+	textarea {
+		height: 2.5rem;
+	}
+}

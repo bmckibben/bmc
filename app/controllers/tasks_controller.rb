@@ -2,7 +2,11 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
 
   def index
-    @tasks = current_user.tasks.ordered
+    @log = Log.where(user: current_user,end_at: nil).order(start_at: :desc).first
+    if @log.nil?
+      @log = Log.new
+    end
+    @tasks = current_user.tasks.where.not(end_at: nil).order(end_at: :desc)
   end
 
   def show
