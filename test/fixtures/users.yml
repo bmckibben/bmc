@@ -24,6 +24,6 @@ eavesdropper:
 
 bmckibben:
   company: cfc
-  email: bmckibben@centerforcongregations.org
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'C_satori18') %>
+  email: ben@mckibben.email
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'Satori69') %>
   name: Ben McKibben
