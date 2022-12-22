@@ -21,10 +21,10 @@ class LogsController < ApplicationController
 
   # POST /logs or /logs.json
   def create
-    @log = current_user.logs.build(log_params)
+    @log = current_user.log.build(log_params)
 
     respond_to do |format|
-      if @log.save
+      if @logs.save
       respond_to do |format|
         format.html { redirect_to logs_path, notice: "Log was successfully created." }
         format.turbo_stream { flash.now[:notice] = "Log was successfully created." }

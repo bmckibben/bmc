@@ -126,12 +126,23 @@ a:hover, a:focus, a:active {
   color: var(--color-primary-rotate);
 }
 
+hr {
+  margin-bottom: 1rem;
+  height: 5px;
+  background: var(--color-menu-link);
+  border: none;
+}
+
 .flex-column {
   flex-direction: column !important;
 }
 
 .center {
   text-align: center;
+}
+
+.form-inputs {
+  width: 100%;
 }
 
 @keyframes appear-then-fade {
@@ -598,13 +609,27 @@ a:hover, a:focus, a:active {
 .log-time input, .log-time textarea, .log-time select {
   border: none;
   height: 2rem;
+  margin-top: 5px;
 }
 .log-time select {
   margin-right: 1rem;
   float: right;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--color-light);
 }
-.log-time textarea {
-  height: 2.5rem;
+.log-time .btn-log {
+  float: right;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+.log-time .btn-log:hover {
+  fill: var(--color-menu-link);
+}
+.log-time #elapsed_time {
+  font-size: 1.5rem;
+  text-align: right;
 }
 
 .container {

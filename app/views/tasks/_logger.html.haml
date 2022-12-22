@@ -1,8 +1,11 @@
 .panel-default.log-time
-  = simple_form_for(@log, html: {id: 'timer'}) do |t|      
+  = simple_form_for(log, html: {id: 'timer'}) do |t| 
+    - if log.errors.any?
+      .error-message
+        = log.errors.full_messages.to_sentence.capitalize
     .row
       .col-md-7
-        = t.input :description, placeholder: 'What are you doing', label: false
+        = t.input :name, placeholder: 'What are you doing?', label: false
         = t.input :start_at, as: :hidden
         = t.input :end_at, as: :hidden    
       .col-md-3
@@ -10,45 +13,5 @@
       .col-md-1{id: 'elapsed_time'}
         = "00:00:00"
       .col-md-1
-        =local_icon("play-circle", "expertise")
+        =image_submit_tag("icons/play-circle", class:"btn-log")
 
-:javascript
-  $(document).ready(function () {
-    var i = 0;
-    $('#btn_start').on('click', function() {
-      var currentTime = new Date();
-      $('#task_time_start_at').val(currentTime);
-      $(this).toggle();
-      $('#btn_end').toggle();
-      $('#timer').submit();
-      elapsed_time = setInterval(function () {
-          $("#elapsed_time").html(secondsToHms(i));
-          $(document).prop('title', secondsToHms(i));
-          i++;
-      }, 1000);      
-    })
-    
-    $('#btn_end').on('click', function() {
-    var currentTime = new Date();
-    $('#task_time_end_at').val(currentTime);
-      $(this).toggle();
-      $('#btn_start').toggle();
-      $('#timer').submit();
-      clearInterval(elapsed_time);
-    })  
-    
-    function secondsToHms(d) {
-        d = Number(d);
-        var h = Math.floor(d / 3600);
-        var m = Math.floor(d % 3600 / 60);
-        var s = Math.floor(d % 3600 % 60);
-
-        return pad(h, 2) +':'+ pad(m,2) + ':'+ pad(s,2); 
-    }    
-    
-    function pad (str, max) {
-      str = str.toString();
-      return str.length < max ? pad("0" + str, max) : str;
-    }    
-    
-  })   

@@ -1,7 +1,9 @@
 = turbo_stream_from current_user, "tasks"
 %main.container
-	= render "logger"
+	= turbo_frame_tag "time_form_frame" do
+		= render "logger", log: @log
 
+	%hr
 	
 	#items.d-flex.flex-column.gap-3
 		= turbo_frame_tag "tasks" do
