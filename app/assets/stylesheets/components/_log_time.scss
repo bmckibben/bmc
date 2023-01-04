@@ -1,0 +1,27 @@
+.log-time {
+	input, textarea, select {
+		border: none;
+		height: 2rem;
+		margin-top: 5px;
+	}
+	select {
+		margin-right: 1rem;
+		float:right;
+		width: 100%;
+		border: none;
+		outline: none;
+		background-color: var(--color-light);
+	}
+	.btn-log {
+	  float: right;
+	  cursor: pointer;
+	  margin-right: 0.5rem;
+	  &:hover {
+	    fill: var(--color-menu-link);
+	  }
+	}	
+	#elapsed_time{
+		font-size: 1.5rem;
+		text-align: right;
+	}
+}

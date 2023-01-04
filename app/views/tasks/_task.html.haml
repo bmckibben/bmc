@@ -7,7 +7,8 @@
       .project-badge{style: "background-color: #{task.project.product.color}"}
         = task.project.name
         = " : "
-        = task.project.product.name        
+        = task.project.product.name 
+      = format_duration task.duration
       = button_to "Delete",     
         task_path(task),      
         method: :delete,        

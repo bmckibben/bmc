@@ -29,7 +29,7 @@
   }
 
   &__btn {
-    color: #66CCFF;
+    color: var(--color-menu-link);;
     float: none;
     padding: 10px 15px;
     text-decoration: none;
@@ -38,7 +38,7 @@
   }
 
   &__btn:hover {
-    color: #CC33FF !important;
+    color: var(--color-menu-link-hover) !important;
     text-decoration: underline;
   }
 

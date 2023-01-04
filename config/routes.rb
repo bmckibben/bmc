@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  
+  resources :tasks 
   resources :logs
-  resources :tasks
   resources :projects
   resources :task_statuses
   resources :project_statuses

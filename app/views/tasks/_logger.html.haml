@@ -1,0 +1,17 @@
+.panel-default.log-time
+  = simple_form_for(log, html: {id: 'timer'}) do |t| 
+    - if log.errors.any?
+      .error-message
+        = log.errors.full_messages.to_sentence.capitalize
+    .row
+      .col-md-7
+        = t.input :name, placeholder: 'What are you doing?', label: false
+        = t.input :start_at, as: :hidden
+        = t.input :end_at, as: :hidden    
+      .col-md-3
+        = t.select :task_id, grouped_tasks_options(@log)  
+      .col-md-1{id: 'elapsed_time'}
+        = "00:00:00"
+      .col-md-1
+        =image_submit_tag("icons/play-circle", class:"btn-log")
+
