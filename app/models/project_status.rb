@@ -1,2 +1,0 @@
-class ProjectStatus < ApplicationRecord
-end
