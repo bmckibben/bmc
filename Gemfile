@@ -37,8 +37,6 @@ gem "jbuilder"
 # Devise is our authentication framework
 gem "devise"
 
-gem "yarn"
-
 #pretty icons
 gem 'font-awesome-sass'
 # prefer HAML markup to ERB
