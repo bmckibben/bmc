@@ -1,0 +1,170 @@
+Searching 278 files for "current_user"
+
+C:\Repos\literallight\app\admin\html_pages.rb:
+    9  # permit_params do
+   10  #   permitted = [:permitted, :attributes]
+   11: #   permitted << :other if params[:action] == 'create' && current_user.admin?
+   12  #   permitted
+   13  # end
+
+C:\Repos\literallight\app\admin\section_footnotes.rb:
+    9  # permit_params do
+   10  #   permitted = [:permitted, :attributes]
+   11: #   permitted << :other if params[:action] == 'create' && current_user.admin?
+   12  #   permitted
+   13  # end
+
+C:\Repos\literallight\app\admin\section_notes.rb:
+    9  # permit_params do
+   10  #   permitted = [:permitted, :attributes]
+   11: #   permitted << :other if params[:action] == 'create' && current_user.admin?
+   12  #   permitted
+   13  # end
+
+C:\Repos\literallight\app\admin\sections.rb:
+    9  # permit_params do
+   10  #   permitted = [:permitted, :attributes]
+   11: #   permitted << :other if params[:action] == 'create' && current_user.admin?
+   12  #   permitted
+   13  # end
+
+C:\Repos\literallight\app\admin\stories.rb:
+    9  # permit_params do
+   10  #   permitted = [:permitted, :attributes]
+   11: #   permitted << :other if params[:action] == 'create' && current_user.admin?
+   12  #   permitted
+   13  # end
+
+C:\Repos\literallight\app\admin\wiki_tags.rb:
+    9  # permit_params do
+   10  #   permitted = [:permitted, :attributes]
+   11: #   permitted << :other if params[:action] == 'create' && current_user.admin?
+   12  #   permitted
+   13  # end
+
+C:\Repos\literallight\app\admin\wikis.rb:
+    9  # permit_params do
+   10  #   permitted = [:permitted, :attributes]
+   11: #   permitted << :other if params[:action] == 'create' && current_user.admin?
+   12  #   permitted
+   13  # end
+
+C:\Repos\literallight\app\controllers\wikis_controller.rb:
+   57    def create
+   58      @wiki = Wiki.new(wiki_params)
+   59:     @wiki.user_id = current_user.id
+   60      @wiki_id = 0
+   61  
+
+C:\Repos\literallight\app\views\sections\chapters.html.haml:
+   18                  =page.title
+   19              .col-md-1.action-icon
+   20:               - if user_signed_in? and current_user.role_cd > 0
+   21                  =link_to edit_section_path(page) do
+   22                    %i.fas.fa-pencil-alt
+
+C:\Repos\literallight\app\views\sections\index.html.haml:
+   18                  =page.title
+   19              .col-md-1.action-icon
+   20:               - if user_signed_in? and current_user.role_cd > 0
+   21                  =link_to edit_section_path(page) do
+   22                    %i.fas.fa-pencil-alt
+
+C:\Repos\literallight\app\views\sections\summaries.html.haml:
+   16                  = "Word Count: #{chapter.word_count}"
+   17                .col-md-2.action-icon
+   18:                 - if user_signed_in? and current_user.role_cd > 0
+   19                    =link_to edit_section_path(chapter) do
+   20                      %i.fas.fa-pencil-alt
+
+C:\Repos\literallight\app\views\wikis\_display.html.erb:
+   14                  <div class=" col-md-3 wiki-actions right">
+   15                    <i aria-hidden="false" class="fa fa-plus action-icon wiki-here" data-id="<%= wiki.id %>" data-parent="<%= wiki.title %>" data-toggle='tooltip' data-placement='bottom' title='Create a child wiki.'></i>
+   16:                   <% if current_user.id = wiki.user %>
+   17                    <i aria-hidden="false" class="fa fa-pencil action-icon wiki-edit" data-id="<%= wiki.id %>" data-toggle='tooltip' data-placement='bottom' title='Edit this wiki.'></i>
+   18                    <% end %>
+   ..
+   34              <div class="row">
+   35                <div class="col-md-12 wiki-attributes">
+   36:               Author: <%= wiki.user.id if !wiki.user.nil? %> (version: <%= current_user.id %> <%= "deleted" if wiki.deleted? %>) | ID: <%= wiki.id %> |
+   37                Created:  <%= wiki.created_at.in_time_zone('Indiana (East)').to_formatted_s(:stardatetime) %> | Updated: <%= wiki.updated_at.in_time_zone('Indiana (East)').to_formatted_s(:stardatetime) %> <br/>
+   38              </div>
+
+C:\Repos\literallight\app\views\wikis\_display.html.haml:
+    9      .col-md-3.wiki-actions.right
+   10        %i.fa.fa-plus.action-icon.wiki-here{"aria-hidden" => "false", "data-id" => "#{wiki.id}", "data-parent" => "#{wiki.title}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Create a child wiki."}
+   11:       - if current_user.id = wiki.user or current_user.admin?
+   12          %i.fa.fa-pencil.action-icon.wiki-edit{"aria-hidden" => "false", "data-id" => "#{wiki.id}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Edit this wiki."}
+   13        %i.fa.fa-times-circle-o.action-icon.wiki-remove{"aria-hidden" => "false", "data-id" => "#{wiki.id}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Remove this wiki from the page."}
+   ..
+   21    .row
+   22      .col-md-12.wiki-attributes
+   23:       Author: #{wiki.user.id if !wiki.user.nil?} (version: #{current_user.id} #{"deleted" if wiki.deleted?}) | ID: #{wiki.id} |
+   24        Created:  #{wiki.created_at.in_time_zone('Indiana (East)').to_formatted_s(:stardatetime)} | Updated: #{wiki.updated_at.in_time_zone('Indiana (East)').to_formatted_s(:stardatetime)}
+   25        %br/
+
+C:\Repos\literallight\app\views\wikis\_form.html.erb:
+   42            <div class="panel-footer">  
+   43              <div class="row wiki-attributes">
+   44:               Author: <%= current_user.login %> 
+   45              </div>
+   46            </div>
+
+C:\Repos\literallight\app\views\wikis\_form.html.haml:
+   34    .panel-footer
+   35      .row.wiki-attributes
+   36:       Author: #{current_user.login}
+
+C:\Repos\literallight\app\views\wikis\wiki_form.html.erb:
+   76      <div class="row">
+   77        <div class="col-md-12 wiki-attributes">
+   78:       Author: <%= current_user.login %> |
+   79        Created:  <%= Time.now.strftime("%Y-%m-%d %R") %>
+   80        </div>
+
+C:\Repos\literallight\app\views\wikis\wiki_form.html.haml:
+   52      .row
+   53        .col-md-12.wiki-attributes
+   54:         Author: #{current_user.login} |
+   55          Created:  #{Time.now.strftime("%Y-%m-%d %R")}
+   56  = tinymce
+
+20 matches across 17 files
+
+
+Searching 278 files for "current_user.id"
+
+C:\Repos\literallight\app\controllers\wikis_controller.rb:
+   57    def create
+   58      @wiki = Wiki.new(wiki_params)
+   59:     @wiki.user_id = current_user.id
+   60      @wiki_id = 0
+   61  
+
+C:\Repos\literallight\app\views\wikis\_display.html.erb:
+   14                  <div class=" col-md-3 wiki-actions right">
+   15                    <i aria-hidden="false" class="fa fa-plus action-icon wiki-here" data-id="<%= wiki.id %>" data-parent="<%= wiki.title %>" data-toggle='tooltip' data-placement='bottom' title='Create a child wiki.'></i>
+   16:                   <% if current_user.id == wiki.user.id %>
+   17                    <i aria-hidden="false" class="fa fa-pencil action-icon wiki-edit" data-id="<%= wiki.id %>" data-toggle='tooltip' data-placement='bottom' title='Edit this wiki.'></i>
+   18                    <% end %>
+   ..
+   34              <div class="row">
+   35                <div class="col-md-12 wiki-attributes">
+   36:               Author: <%= wiki.user.id if !wiki.user.nil? %> (version: <%= wiki.version || 1 %> <%= "deleted" if wiki.deleted? %>) | ID: <%= wiki.id %> |
+   37                Created:  <%= wiki.created_at.in_time_zone('Indiana (East)').to_formatted_s(:stardatetime) %> | Updated: <%= wiki.updated_at.in_time_zone('Indiana (East)').to_formatted_s(:stardatetime) %> <br/>
+   38              </div>
+
+C:\Repos\literallight\app\views\wikis\_display.html.haml:
+    9      .col-md-3.wiki-actions.right
+   10        %i.fa.fa-plus.action-icon.wiki-here{"aria-hidden" => "false", "data-id" => "#{wiki.id}", "data-parent" => "#{wiki.title}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Create a child wiki."}
+   11:       - if current_user.id = wiki.user or current_user.admin?
+   12          %i.fa.fa-pencil.action-icon.wiki-edit{"aria-hidden" => "false", "data-id" => "#{wiki.id}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Edit this wiki."}
+   13        %i.fa.fa-times-circle-o.action-icon.wiki-remove{"aria-hidden" => "false", "data-id" => "#{wiki.id}", "data-placement" => "bottom", "data-toggle" => "tooltip", title: "Remove this wiki from the page."}
+   ..
+   21    .row
+   22      .col-md-12.wiki-attributes
+   23:       Author: #{wiki.user.id if !wiki.user.nil?} (version: #{current_user.id} #{"deleted" if wiki.deleted?}) | ID: #{wiki.id} |
+   24        Created:  #{wiki.created_at.in_time_zone('Indiana (East)').to_formatted_s(:stardatetime)} | Updated: #{wiki.updated_at.in_time_zone('Indiana (East)').to_formatted_s(:stardatetime)}
+   25        %br/
+
+5 matches across 3 files

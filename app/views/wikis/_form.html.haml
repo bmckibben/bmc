@@ -1,0 +1,48 @@
+= form_for(@wiki) do |f|
+  - if @wiki.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@wiki.errors.count, "error")
+        prohibited this wiki from being saved:
+      %ul
+        - @wiki.errors.full_messages.each do |message|
+          %li= message
+  .panel-heading
+    %h3.panel-title
+      = f.label :title
+      = f.text_field :title
+  .panel-body
+    .row.border-bottom
+      .col-md-6.wiki-tags
+        = f.label :parent
+        = f.text_field :parent
+      .col-md-6.wiki-tags
+        = f.label :default_sort
+        = f.text_field :default_sort
+      .col-md-6.wiki-tags
+        = f.label :deleted
+        = f.check_box :deleted
+      .col-md-6.wiki-actions.right
+        %button.btn-transparent{name: "commit", type: "submit"}
+          %i.fa.fa-check-square-o.action-icon{"aria-hidden" => "false"}
+        = link_to @wiki, method: :delete, data: { confirm: 'Are you sure?' } do
+          %i.fa.fa-trash{"aria-hidden" => "false", style: "font-size:2rem;color:red;"}
+    .row.wiki-body
+      = f.label :body
+      = f.input :body, class: "wiki-body-body"
+  .panel-footer
+    .row.wiki-attributes
+      Author: #{current_user.login}
+
+:javascript
+  $( document ).ready(function() {
+    tinyMCE.init({
+      selector: '#wiki-body-body',
+      height: 500,
+      menubar: "",
+      plugins: "image link charmap advlist fullscreen code",
+      toolbar: "fullscreen | undo redo | styleselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist outdent indent | removeformat | image | link | charmap | code | help",
+      content_css: "#{ asset_path('application.css')}"
+    });
+
+  })      

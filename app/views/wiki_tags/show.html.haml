@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Wiki:
+  = @wiki_tag.wiki_id
+%p
+  %b Tag:
+  = @wiki_tag.tag_id
+
+= link_to 'Edit', edit_wiki_tag_path(@wiki_tag)
+\|
+= link_to 'Back', wiki_tags_path

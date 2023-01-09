@@ -1,0 +1,23 @@
+%h1 Listing wiki_tags
+
+%table
+  %thead
+    %tr
+      %th Wiki
+      %th Tag
+      %th
+      %th
+      %th
+
+  %tbody
+    - @wiki_tags.each do |wiki_tag|
+      %tr
+        %td= wiki_tag.wiki_id
+        %td= wiki_tag.tag_id
+        %td= link_to 'Show', wiki_tag
+        %td= link_to 'Edit', edit_wiki_tag_path(wiki_tag)
+        %td= link_to 'Destroy', wiki_tag, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Wiki tag', new_wiki_tag_path

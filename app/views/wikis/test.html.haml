@@ -1,0 +1,16 @@
+.row
+  .col-md-1
+  .col-md-10.white-scroller
+    %h1 Tags
+    %table.responsive-table{style: "margin:auto;width:100%;"}
+      %thead
+        %tr
+          %th Wiki ID
+          %th Tag ID
+          %th Tag Title
+      %tbody
+        - @wikis.each do |wiki_tag|
+          %tr
+            %td= wiki_tag.wiki_id
+            %td= wiki_tag.tag_id
+            %td= wiki_tag.tag.title if !wiki_tag.tag.nil?

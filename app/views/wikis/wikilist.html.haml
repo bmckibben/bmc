@@ -1,0 +1,35 @@
+.row{style: "margin-top:40px;"}
+  .col-md-8.col-md-offset-2.col-xs-12.white-scroller
+    %h1 Listing Wiki Tags
+    %table.table
+      %thead
+        %tr
+          %th ID
+          %th Title
+          %th User
+          %th Parent
+          %th Version
+          %th Deleted
+          %th Created
+          %th Updated
+          %th Last Revision
+          %th Default Sort
+          %th{colspan: "3"}
+      %tbody
+        - @wikis.each do |wiki|
+          %tr
+            %td= wiki.id
+            %td= wiki.title
+            %td= wiki.user_id
+            %td= wiki.parent
+            %td= wiki.version
+            %td= wiki.deleted
+            %td= wiki.created_at
+            %td= wiki.updated_at
+            %td= wiki.last_revision
+            %td= wiki.default_sort
+            %td= link_to 'Show', wiki
+            %td= link_to 'Edit', edit_wiki_path(wiki)
+            %td= link_to 'Destroy', wiki, method: :delete, data: { confirm: 'Are you sure?' }
+    %br/
+    = link_to 'New Wiki tag', new_wiki_tag_path

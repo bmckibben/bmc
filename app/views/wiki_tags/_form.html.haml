@@ -1,0 +1,16 @@
+= form_for @wiki_tag do |f|
+  - if @wiki_tag.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@wiki_tag.errors.count, "error")} prohibited this wiki_tag from being saved:"
+      %ul
+        - @wiki_tag.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :wiki_id
+    = f.number_field :wiki_id
+  .field
+    = f.label :tag_id
+    = f.number_field :tag_id
+  .actions
+    = f.submit 'Save'

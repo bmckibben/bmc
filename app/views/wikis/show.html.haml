@@ -1,0 +1,22 @@
+%p
+  %strong Title:
+  = @wiki.title
+%p
+  %strong Author:
+  = @wiki.user.inspect
+%p
+  %strong Body:
+  = @wiki.body
+%p
+  %strong Parent:
+  = @wiki.parent
+%p
+  %strong Revision:
+  = @wiki.prev_revision
+%p
+  %strong Deleted:
+  = @wiki.deleted
+= link_to 'Edit', edit_wiki_path(@wiki)
+|
+= link_to 'Back', wikis_path
+= @wiki.inspect
