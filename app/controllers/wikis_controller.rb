@@ -8,7 +8,7 @@ class WikisController < ApplicationController
     @wikis = Wiki.where("default_sort < 0 and (deleted is null or deleted is false)").order(default_sort: :desc)
 
     #???? nested_set doesn't work with mysql
-    #@menu = view_context.nested_set(view_context.query_menu,'tree-menu', 0)
+    @menu = view_context.nested_set(view_context.query_menu,'tree-menu', 0)
     
     #might change recents to where < one month?
     @recents = Wiki.all.order(updated_at: :desc).limit(100)
